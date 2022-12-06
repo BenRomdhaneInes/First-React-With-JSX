@@ -1,45 +1,27 @@
-
-import PersonalCard from './personal-card/personal-card'
+import React from 'react';
 import './App.css';
+import Header from './Components/header';
+import Navigation from './Components/navigation';
+import Main from './Components/main';
+import SubContents from './Components/sub-content';
+import Advertisement from './Components/advertisement';
 
-
+import './App.css'
+                
 function App() {
-  const todoList = ['Learn React', 'Climb Mt. Everest', 'Run a Marathon', 'Feed the dogs'];
-  const personalData = [
-    {
-      firstName: 'Jane',
-      lastName: 'Doe',
-      age: 36,
-      hairColor: 'Black',
-    },
-    {
-      firstName: 'John',
-      lastName: 'Smith',
-      age: 88,
-      hairColor: 'Brown',
-    },
-    {
-      firstName: 'Millard',
-      lastName: 'FillMore',
-      age: 50,
-      hairColor: 'Brown',
-    },
-    {
-      firstName: 'Maria',
-      lastName: 'Smith',
-      age: 36,
-      hairColor: 'black',
-    },
-  ]
   return (
-    <div className="App">
-      <h1>Hello Dojo</h1>
-      <h2>things i need to do:</h2>
-      <ul>{todoList.map((todo,index) => <li key={index}>{todo}</li>)}</ul>
-      <hr/>
-      {personalData.map((person,index) => <PersonalCard person={person} key={index}/>)}
+    <div className="app">
+      <Header />
+      <Navigation />
+      <Main>
+      <SubContents />
+      <SubContents />
+      <SubContents />
+      <Advertisement />
+      </Main>
     </div>
   );
 }
-
+                
 export default App;
+
