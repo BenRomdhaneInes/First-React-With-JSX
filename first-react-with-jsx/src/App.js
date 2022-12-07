@@ -1,24 +1,38 @@
 import React from 'react';
-import './App.css';
-import Header from './Components/header';
-import Navigation from './Components/navigation';
-import Main from './Components/main';
-import SubContents from './Components/sub-content';
-import Advertisement from './Components/advertisement';
+import PersonalCard from './personal-card/personal-card'
 
 import './App.css'
-                
+
 function App() {
+  const personalData = [
+    {
+      firstName: 'Jane',
+      lastName: 'Doe',
+      age: 36,
+      hairColor: 'Black',
+    },
+    {
+      firstName: 'John',
+      lastName: 'Smith',
+      age: 88,
+      hairColor: 'Brown',
+    },
+    {
+      firstName: 'Millard',
+      lastName: 'FillMore',
+      age: 50,
+      hairColor: 'Brown',
+    },
+    {
+      firstName: 'Maria',
+      lastName: 'Smith',
+      age: 36,
+      hairColor: 'black',
+    },
+  ]
   return (
     <div className="app">
-      <Header />
-      <Navigation />
-      <Main>
-      <SubContents />
-      <SubContents />
-      <SubContents />
-      <Advertisement />
-      </Main>
+      {personalData.map((person,index) => <PersonalCard person={person} key={index}/>)}
     </div>
   );
 }
