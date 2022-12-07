@@ -1,7 +1,8 @@
 import React from 'react';
-import PersonalCard from './personal-card/personal-card'
+import Form from './Components/form';
 
 import './App.css'
+
 
 function App() {
   const personalData = [
@@ -32,7 +33,7 @@ function App() {
   ]
   return (
     <div className="app">
-      {personalData.map((person,index) => <PersonalCard person={person} key={index}/>)}
+      <Form/>
     </div>
   );
 }
