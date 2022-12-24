@@ -1,18 +1,49 @@
 .app {
-  text-align: center;
   padding:50px;
 }
 
-.box-wrapper{
-  display:flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 20px 0;
-  justify-content: center;
+.tabs-header{
+  display: flex;
+  gap: 8px;
 }
 
-.color-box{
-  width:100px;
-  height: 100px;
-  border-radius:10px;
+.tab-btn {
+  padding: 8px 16px;
+  cursor: pointer;
+  border: 1px solid #000;
+  position: relative;
+}
+
+.tab-btn::before{
+  width: 0px;
+  height: 100%;
+  content:'';
+  position: absolute;
+  left: 0%;
+  top: 0;
+  background: #000;
+  transition: width 500ms linear 10ms;
+  z-index: -1;
+}
+
+.tab-btn.active{
+  color: #fff;
+}
+
+.tab-btn.active::before{
+  width: 100%;
+}
+
+.tabs-container{
+  padding: 16px;
+  margin: 8px 0;
+  border: 1px solid #000;
+}
+
+.tab-content{
+  display:none;
+}
+
+.tab-content.active{
+  display: block;
 }
