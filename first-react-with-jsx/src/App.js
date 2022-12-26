@@ -1,17 +1,22 @@
-import React, { useState }from 'react';
-import ColorSelector from './Components/colorSelector';
-import ColorBox from './Components/colorBox';
+import React from 'react';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
+import Details from './Details'
+import Form from './Form';
 import './App.css'
 
-
 function App() {
-  const [boxs, setBoxs] = useState([])
   return (
-    <div className="app">
-      <ColorSelector boxs={boxs} setBoxs={setBoxs}/>
-      <div className="box-wrapper">{boxs?.map((box, index) => <ColorBox box={box} key={index}/>)}</div>
-    </div>
+    <BrowserRouter>
+      <Form/>
+      <Routes>
+        <Route path="/:type/:id" element={<Details />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
                 
